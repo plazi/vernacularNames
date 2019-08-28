@@ -1,6 +1,21 @@
 @prefix slang: <https://vocab.plazi.org/vernacular#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
 
-</> rdfs:about slang:NameOccurence.
+
+</> a schema:WebPage;
+    rdfs:about slang:NameOccurence;
+    schema:mainContentOfPage [
+        a schema:Article;
+        schema:articleBody
+        """
+        The site https://vernacular.plazi.org/ provides access to vernacular names of 
+        species linking them to the respective taxa on <a href="http://plazi.org/">Plazi</a> or in the 
+        <a href="http://www.catalogueoflife.org/">Catalogue of Life</a>.
+
+        You can query the data via SPARQL, such as by using 
+        <a href="http://yasgui.org/#query=PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0Aprefix+slang%3A+%3Chttps%3A%2F%2Fvocab.plazi.org%2Fvernacular%23%3E%0A%0ASELECT+DISTINCT+%3Fdetails+%3Fvalue+%3Ftaxon+WHERE+%7B+GRAPH+%3Fg+%7B%0A++%3Fdetails+a+%3Chttps%3A%2F%2Fvocab.plazi.org%2Fvernacular%23NameOccurrence%3E+.%0A++%3Fdetails+rdf%3Avalue+%3Fvalue+.%0A++%3Fdetails+slang%3Ataxon+%3Ftaxon+.%0A++%7D+%7D%0ALIMIT+1000&contentTypeConstruct=text%2Fturtle&contentTypeSelect=application%2Fsparql-results%2Bjson&endpoint=https%3A%2F%2Fvernacular.plazi.org%2Fsparql&requestMethod=POST&tabTitle=Query+7&headers=%7B%7D&outputFormat=table">yasgui</a>.
+        """
+    ].
 slang:NameOccurence a rdfs:Class.
