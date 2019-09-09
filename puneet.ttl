@@ -1,0 +1,6 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+
+<http://vernacular.plazi.org/puneet> rdfs:label "Puneet", "Punit"@de.
+<http://vernacular.plazi.org/puneet> skos:altName "Punkish";
+foaf:knows <http://vernacular.plazi.org/reto>.
