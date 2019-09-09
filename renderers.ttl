@@ -3,6 +3,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix r2h: <http://rdf2h.github.io/2015/rdf2h#> .
+@prefix schema: <http://schema.org/> .
 
 
 [] a r2h:Renderer;
@@ -46,4 +47,23 @@
     r2h:context gt:HtmlTitle;
     r2h:mustache """
         <title>Plazi Vernadular Names -  {{{.}}}</title>
+    """.
+
+# Specific Renderers
+
+[] a r2h:Renderer;
+    r2h:type schema:WebPage;
+    r2h:context r2h:Default;
+    r2h:mustache """
+        {{{@prefix s: <http://schema.org/>}}}
+        {{{@prefix r2h: <http://rdf2h.github.io/2015/rdf2h#>}}}
+        <h1>{{{:render . s:name}}}</h1>
+        {{#s:mainContentOfPage}}
+            <div class='card'>
+                {{{:render . s:Article}}}
+            </div>
+        {{/s:mainContentOfPage}}
+        <div class='card only_table'>
+            {{{:render . r2h:Default-Naked}}}
+        </div>
     """.

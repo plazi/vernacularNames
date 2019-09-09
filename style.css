@@ -59,3 +59,20 @@ body {
   box-shadow: 0 0 4px #607D8B;
   border-width: 0;
 }
+
+.only_table {
+  font-size: 0;
+}
+
+.only_table>*:not(div[id]) {
+  margin: 0 !important;
+}
+
+.only_table>div[id] {
+  font-size: initial;
+  margin: initial;
+}
+
+a {
+  word-break: break-all;
+}
