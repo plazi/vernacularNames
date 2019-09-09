@@ -9,17 +9,7 @@
     r2h:type rdfs:Resource;
     r2h:context r2h:Tail;
     r2h:mustache """
-    <div class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3"><ul class="footernavi footernavi1"><li class="menulast1"><a href="info1/legal-disclaimer/">Legal Disclaimer</a></li></ul></div>
-                <div class="col-sm-3"><ul class="footernavi footernavi1"><li class="menulast1"><a href="info2/privacy/">Privacy</a></li></ul></div>
-                <div class="col-sm-3"><ul class="footernavi footernavi2"><li class="menulast1"><a href="info3/sitemap/">Sitemap</a></li></ul></div>
-                <div class="col-sm-3"></div>
-            </div>
-        </div>
-    </div>
-    <div class="meta-section">
+    <!--<div class="meta-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 copyright"> <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><img src="https://wiki.creativecommons.org/images/0/00/Cc0_88x31.png"/></a><br/> </div>
@@ -29,7 +19,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     """.
 
 
@@ -37,7 +27,9 @@
     r2h:type rdfs:Resource;
     r2h:context gt:HtmlBody;
     r2h:mustache """
-        {{{:render . r2h:Default}}}
+        <main class='container elevated'>
+            {{{:render . r2h:Default}}}
+        </main>
     """.
 
 [] a r2h:Renderer;
@@ -45,6 +37,8 @@
     r2h:context gt:HtmlHead;
     r2h:mustache """
         {{{:render . gt:HtmlTitle}}}
+        <link rel='stylesheet' href='/style.css'>
+        <link rel='stylesheet' href='http://localhost:5055/style.css'>
     """.
 
 [] a r2h:Renderer;

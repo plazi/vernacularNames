@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Work+Sans:100,200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+}
+
+.container {
+  width: 100ch;
+  max-width: 100%;
+  max-width: calc(100vw - 32px);
+  margin: 0 auto;
+  padding: 32px;
+  border-radius: 8px;
+}
+
+.container * {
+  font-family: Merriweather, 'Times New Roman', Times, serif;
+}
+
+.container h1,
+.container h1 * {
+  margin: 0 0 16px;
+  font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+
+.image {
+  border-radius: 4px;
+}
+
+.container>.card {
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.card {
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px;
+}
+
+.card .card_header {
+  font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.card .card_body {
+  margin: 0;
+}
+
+.elevated {
+  box-shadow: 0 0 4px #607D8B;
+  border-width: 0;
+}
