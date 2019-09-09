@@ -57,13 +57,62 @@
     r2h:mustache """
         {{{@prefix s: <http://schema.org/>}}}
         {{{@prefix r2h: <http://rdf2h.github.io/2015/rdf2h#>}}}
+        {{{@prefix gt: <http://rdf2h.github.io/2016/generic-rdf2h-renderers/>}}}
         <h1>{{{:render . s:name}}}</h1>
         {{#s:mainContentOfPage}}
             <div class='card'>
                 {{{:render . s:Article}}}
             </div>
         {{/s:mainContentOfPage}}
-        <div class='card only_table'>
-            {{{:render . r2h:Default-Naked}}}
+        <div class='card'>
+            <table class='card_body'>
+                {{{:render . gt:Card}}}
+            </table>
         </div>
+    """.
+
+[] a r2h:Renderer ;
+    r2h:type rdfs:Resource;
+    r2h:context gt:Card;
+    r2h:javaScript """
+      let special = [
+          'http://schema.org/mainContentOfPage'
+        ]
+      let prefixMappings = [
+          {ns: "http://www.w3.org/1999/02/22-rdf-syntax-ns#", prefix: "rdf:"},
+          {ns: "http://www.w3.org/2004/02/skos/core#", prefix: "skos:"},
+          {ns: "http://www.w3.org/2002/07/owl#", prefix: "owl:"},
+          {ns: "http://www.w3.org/2000/01/rdf-schema#", prefix: "rdfs:"},
+          {ns: "http://schema.org/", prefix: "schema:"},
+          {ns: "http://dbpedia.org/resource/", prefix: "dbr:"},
+          {ns: "http://dbpedia.org/ontology/", prefix: "dbo:"},
+          {ns: "http://dbpedia.org/property/", prefix: "dbp:"},
+          {ns: "http://xmlns.com/foaf/0.1/", prefix: "foaf:"},
+          {ns: "http://www.wikidata.org/entity/", prefix: "wikidata:"},
+          {ns: "http://commons.wikimedia.org/wiki/", prefix: "wikimedia:"},
+          {ns: "http://purl.org/dc/terms/", prefix: "dc:"},
+          {ns: "http://usefulinc.com/ns/doap#", prefix: "doap:"},
+        ];
+      function styleUri(uri) {
+          var mapping = prefixMappings.find(function(mappping) {
+            return uri.startsWith(mappping.ns);
+          });
+          if (mapping) return mapping.prefix+"<b>"+uri.substring(mapping.ns.length)+"</b>";
+          return uri;
+      }
+      console.log(n);
+      let result = '';
+      let s = n.graph.match(n.node, undefined, undefined);
+      if (s.length > 0) {
+        s.forEach(function(t) {
+          console.log(t.object)
+          if (!special.includes(t.predicate.value)) {
+            let value = t.object.termType == 'NamedNode' ?
+              `<a href='${t.object.value}'>${styleUri(t.object.value)}</a>` :
+              t.object.value.replace(/&/g,'&amp;');
+            result += `<tr><td><a href='${t.predicate.value}'>${styleUri(t.predicate.value)}</a></td><td>${value}</td></tr>`;
+          }
+        });
+      };
+      print(result);
     """.
