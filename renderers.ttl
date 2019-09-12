@@ -83,9 +83,9 @@
         ]
       let prefixMappings = [
           {ns: "http://www.w3.org/1999/02/22-rdf-syntax-ns#", prefix: "rdf:"},
-          {ns: "http://www.w3.org/2004/02/skos/core#", prefix: "skos:"},
-          {ns: "http://www.w3.org/2002/07/owl#", prefix: "owl:"},
           {ns: "http://www.w3.org/2000/01/rdf-schema#", prefix: "rdfs:"},
+/*          {ns: "http://www.w3.org/2004/02/skos/core#", prefix: "skos:"},
+          {ns: "http://www.w3.org/2002/07/owl#", prefix: "owl:"},
           {ns: "http://schema.org/", prefix: "schema:"},
           {ns: "http://dbpedia.org/resource/", prefix: "dbr:"},
           {ns: "http://dbpedia.org/ontology/", prefix: "dbo:"},
@@ -94,7 +94,7 @@
           {ns: "http://www.wikidata.org/entity/", prefix: "wikidata:"},
           {ns: "http://commons.wikimedia.org/wiki/", prefix: "wikimedia:"},
           {ns: "http://purl.org/dc/terms/", prefix: "dc:"},
-          {ns: "http://usefulinc.com/ns/doap#", prefix: "doap:"},
+          {ns: "http://usefulinc.com/ns/doap#", prefix: "doap:"},*/
         ];
       function styleUri(uri) {
           var mapping = prefixMappings.find(function(mappping) {
