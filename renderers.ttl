@@ -8,24 +8,6 @@
 
 [] a r2h:Renderer;
     r2h:type rdfs:Resource;
-    r2h:context r2h:Tail;
-    r2h:mustache """
-    <!--<div class="meta-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 copyright"> <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><img src="https://wiki.creativecommons.org/images/0/00/Cc0_88x31.png"/></a><br/> </div>
-                <div class="col-md-6">
-                  <div> <div class="pull-left"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="L87Q9NCSXMXL8"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1"></form></div> </div>
-                  <div class="pull-right"> <a href="https://twitter.com/plazi_ch "><img style="width:25px" src="/fileadmin/Dateien/PLAZI_Images/Icons/twitter.svg"></a> </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
-    """.
-
-
-[] a r2h:Renderer;
-    r2h:type rdfs:Resource;
     r2h:context gt:HtmlBody;
     r2h:mustache """
         <header class='plazi-header'>
@@ -36,6 +18,15 @@
         <main class='container'>
             {{{:render . r2h:Default}}}
         </main>
+        <div class="plazi-footer">
+            <div class="container">
+                <div class="flex-row">
+                    <div><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><img src="https://wiki.creativecommons.org/images/0/00/Cc0_88x31.png"/></a></div>
+                    <div>This site was created by <a href='https://factsmission.com'>FactsMission</a> in collaboration with <a href='http://plazi.org/'>Plazi</a>.</div>
+                    <a href="https://twitter.com/plazi_ch "><img style="width:25px" src="http://plazi.org/fileadmin/Dateien/PLAZI_Images/Icons/twitter.svg"></a>
+                </div>
+            </div>
+        </div>
     """.
 
 [] a r2h:Renderer;
