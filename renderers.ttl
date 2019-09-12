@@ -28,7 +28,12 @@
     r2h:type rdfs:Resource;
     r2h:context gt:HtmlBody;
     r2h:mustache """
-        <main class='container elevated'>
+        <header class='plazi-header'>
+            <div class='container'>
+                <a href='http://plazi.org/'><img src='http://plazi.org/fileadmin/templates/img/logo.png' alt='Plazi - take care of freedom' width='200' height='50'></a>
+            </div>
+        </header>
+        <main class='container'>
             {{{:render . r2h:Default}}}
         </main>
     """.
@@ -64,11 +69,9 @@
                 {{{:render . s:Article}}}
             </div>
         {{/s:mainContentOfPage}}
-        <div class='card'>
-            <table class='card_body'>
-                {{{:render . gt:Card}}}
-            </table>
-        </div>
+        <table>
+            {{{:render . gt:Card}}}
+        </table>
     """.
 
 [] a r2h:Renderer ;
@@ -110,7 +113,7 @@
             let value = t.object.termType == 'NamedNode' ?
               `<a href='${t.object.value}'>${styleUri(t.object.value)}</a>` :
               t.object.value.replace(/&/g,'&amp;');
-            result += `<tr><td><a href='${t.predicate.value}'>${styleUri(t.predicate.value)}</a></td><td>${value}</td></tr>`;
+            result += `<tr><td><a class='nolink' href='${t.predicate.value}'>${styleUri(t.predicate.value)}</a></td><td>${value}</td></tr>`;
           }
         });
       };
