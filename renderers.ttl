@@ -39,14 +39,14 @@
     r2h:mustache """
         {{{:render . gt:HtmlTitle}}}
         <link rel='stylesheet' href='/style.css'>
-        <link rel='stylesheet' href='http://localhost:5055/style.css'>
+        <link rel='stylesheet' href='http://localhost:8099/style.css'>
     """.
 
 [] a r2h:Renderer;
     r2h:type rdfs:Resource;
     r2h:context gt:HtmlTitle;
     r2h:mustache """
-        <title>Plazi Vernadular Names -  {{{.}}}</title>
+        <title>Plazi Vernacular Names - {{{.}}}</title>
     """.
 
 # Specific Renderers
