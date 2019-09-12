@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="flex-row">
                     <div><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><img src="https://wiki.creativecommons.org/images/0/00/Cc0_88x31.png"/></a></div>
-                    <div>This site was created by <a href='https://factsmission.com'>FactsMission</a> in collaboration with <a href='http://plazi.org/'>Plazi</a>.</div>
+                    <div>This site was created by <a href='https://factsmission.com'>FactsMission</a> for <a href='http://plazi.org/'>Plazi</a>.</div>
                     <a href="https://twitter.com/plazi_ch "><img style="width:25px" src="http://plazi.org/fileadmin/Dateien/PLAZI_Images/Icons/twitter.svg"></a>
                 </div>
             </div>
