@@ -6,7 +6,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix schema: <http://schema.org/> .
-@prefix slang: <https://vocab.plazi.org/vernacular#> .
+@prefix slang: <https://vocab.plazi.org/vernacular/> .
 
 <> a owl:Ontology;
     dcterms:title "Plazi Vernacular Names Ontology"@en;
