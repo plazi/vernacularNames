@@ -15,7 +15,7 @@
 slang:NameOccurrence a rdfs:class;
     rdfs:isDefinedBy <> ;
     skos:prefLabel "NameOccurrence"@en ;
-    skos:definition "Usage of a vernacular name in a sepcific region."@en;
+    skos:definition "Usage of a vernacular name in a sepcific region."@en.
 
 slang:taxon a rdf:Property ;
     rdfs:isDefinedBy <> ;
