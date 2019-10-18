@@ -1,0 +1,14 @@
+@prefix slang: <https://vocab.plazi.org/vernacular/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+</something> a slang:NameOccurrence ;
+    slang:areaCoarse "" ;
+    slang:areaFine "Welle7" ;
+    slang:areaGlobal "DACHLS" ;
+    slang:taxon <http://taxon-concept.plazi.org/id/Plantae/Aesculus_hippocastanum> ; ;
+    slang:vernacularNameStatus slang:localName ;
+    rdf:value "Rosskastanie";
+    rdfs:isDefinedBy <> .
