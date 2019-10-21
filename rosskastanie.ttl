@@ -6,7 +6,7 @@
 
 </something> a slang:NameOccurrence ;
     slang:areaCoarse "" ;
-    slang:areaFine "Welle7" ;
+    slang:areaFine "Welle07" ;
     slang:areaGlobal "DACHLS" ;
     slang:taxon <http://taxon-concept.plazi.org/id/Plantae/Aesculus_hippocastanum> ; ;
     slang:vernacularNameStatus slang:localName ;
